@@ -1,14 +1,17 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView } from "react-native-web";
 import Task from "./components/Task";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* today's tasks */}
+      {/* tasks */}
       <View style={styles.tasksWrapper}>
-        <Text style={styles.sectionTitle}>Today's task</Text>
+        <Text style={styles.sectionTitle}>To do:</Text>
+
         <View style={styles.items}>
+          {/* This is where the tasks will go */}
           <Task text={"Text 1"} />
           <Task text={"Text 2"} />
         </View>
@@ -30,5 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
-  items: {},
+  items: {
+    marginTop: 30,
+  },
 });
